@@ -2,11 +2,11 @@ package com.springfox.cuclinet;
 
 public class server {
 
-	public static String game = "Survival Gia";
+	public static String games = game.survivalnectro;
 	public static String server = "play.craftedutopia.net";
 	public static long time1;
 	public static long time2;
 	public static String image = "survival";
-	public static String gameshort = "SGia";
+	public static String gameshort = game.snectro;
 
 }

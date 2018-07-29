@@ -1,9 +1,21 @@
 package com.springfox.cuclinet;
 
 import club.minnced.discord.rpc.*;
+import javax.swing.*; 
 
 public class Main {
     public static void main(String[] args) {
+    	//1. Create the frame.
+    	JFrame frame = new JFrame("FrameDemo");
+
+    	//2. Optional: What happens when the frame closes?
+    	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+    	//4. Size the frame.
+    	frame.pack();
+
+    	//5. Show it.
+    	frame.setVisible(true);
         DiscordRPC lib = DiscordRPC.INSTANCE;
         String applicationId = appid.id;
         String steamId = "";
@@ -21,7 +33,7 @@ public class Main {
         discordPresence.smallImageText = cu.imagepingt1;
         discordPresence.partyId = cu.partyid;
         discordPresence.partySize = cu.playersparty;
-        discordPresence.partyMax = cu.playersparty;
+        discordPresence.partyMax = game.playercountparty2;
         discordPresence.spectateSecret = cu.secret1;
         discordPresence.joinSecret = cu.secret2;
         lib.Discord_UpdatePresence(discordPresence);

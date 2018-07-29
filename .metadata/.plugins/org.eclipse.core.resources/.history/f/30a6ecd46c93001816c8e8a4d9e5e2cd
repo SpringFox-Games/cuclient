@@ -1,0 +1,12 @@
+package com.springfox.cuclinet;
+
+public class game {
+
+	public static String playerlower = "springyfr";
+	public static String playerupper = "SpringyFr";
+	public static String partyid = "RXfIjwm4ET7KpHiwP3yU";
+	public static int playercountparty = 1;
+	public static String secret1 = "yWSFPhgVolXGUURRupl8";
+	public static String secret2 = "3SS3nRaNOn2axdddKpDj";
+
+}

@@ -1,0 +1,12 @@
+package com.springfox.cuclinet;
+
+public class server {
+
+	public static String games = game.bedwars;
+	public static String server = "play.craftedutopia.net";
+	public static long time1;
+	public static long time2;
+	public static String image = "bedwars";
+	public static String gameshort = game.bw;
+
+}
