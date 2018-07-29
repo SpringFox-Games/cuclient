@@ -1,0 +1,18 @@
+package com.springfox.cuclinet;
+
+public class cu {
+
+	public static String playingon;
+	public static String gamestamp;
+	public static long timestampstart;
+	public static long timestampend;
+	public static String playingimageping;
+	public static String playingin;
+	public static String imageping1;
+	public static String imagepingt1;
+	public static String partyid;
+	public static int playersparty;
+	public static String secret1;
+	public static String secret2;
+
+}

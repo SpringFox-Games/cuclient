@@ -1,0 +1,8 @@
+package com.springfox.cuclinet;
+
+public class server {
+
+	public static String game = "Survival Gia";
+	public static String server = "play.craftedutopia.net";
+
+}

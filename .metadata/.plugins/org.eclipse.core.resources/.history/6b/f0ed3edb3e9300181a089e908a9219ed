@@ -1,0 +1,38 @@
+package com.springfox.cuclinet;
+
+import club.minnced.discord.rpc.*;
+
+public class Main {
+    public static void main(String[] args) {
+        DiscordRPC lib = DiscordRPC.INSTANCE;
+        String applicationId = "472959129019744256";
+        String steamId = "";
+        DiscordEventHandlers handlers = new DiscordEventHandlers();
+        handlers.ready = (user) -> System.out.println("Ready!");
+        lib.Discord_Initialize(applicationId, handlers, true, steamId);
+        DiscordRichPresence presence = new DiscordRichPresence();
+        presence.state = "Playing on Crafted Utopia";
+        presence.details = "In Survival";
+        presence.startTimestamp = 1507665886;
+        presence.endTimestamp = 1507665886;
+        presence.largeImageKey = "survival";
+        presence.largeImageText = "Playing in Survival Gia";
+        presence.smallImageKey = "springyfr_png";
+        presence.smallImageText = "SpringyFr";
+        presence.partyId = "ae488379-351d-4a4f-ad32-2b9b01c91657";
+        presence.partySize = 1;
+        presence.partyMax = 75;
+        presence.spectateSecret = "MTIzNDV8MTIzNDV8MTMyNDU0";
+        presence.joinSecret = "MTI4NzM0OjFpMmhuZToxMjMxMjM= ";
+        lib.Discord_UpdatePresence(presence);
+        // in a worker thread
+        new Thread(() -> {
+            while (!Thread.currentThread().isInterrupted()) {
+                lib.Discord_RunCallbacks();
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException ignored) {}
+            }
+        }, "RPC-Callback-Handler").start();
+    }
+}

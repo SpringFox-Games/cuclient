@@ -1,0 +1,18 @@
+package com.springfox.cuclinet;
+
+public class cu {
+
+	public static String playingon = "Playing on the" + " " + server.game + " at" + " " + server.server;
+	public static String gamestamp = "In" + " " server.game;
+	public static long timestampstart = server.time1;
+	public static long timestampend = server.time2;
+	public static String playingimageping = "survival";
+	public static String playingin = "Playing in Test";
+	public static String imageping1 = "springyfr";
+	public static String imagepingt1 = "SpringyFr";
+	public static String partyid = "RXfIjwm4ET7KpHiwP3yU";
+	public static int playersparty = 1;
+	public static String secret1 = "yWSFPhgVolXGUURRupl8";
+	public static String secret2 = "3SS3nRaNOn2axdddKpDj";
+
+}

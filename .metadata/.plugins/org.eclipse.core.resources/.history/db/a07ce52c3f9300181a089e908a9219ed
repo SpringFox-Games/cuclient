@@ -1,0 +1,38 @@
+package com.springfox.cuclinet;
+
+import club.minnced.discord.rpc.*;
+
+public class Main {
+    public static void main(String[] args) {
+        DiscordRPC lib = DiscordRPC.INSTANCE;
+        String applicationId = "472959129019744256";
+        String steamId = "";
+        DiscordEventHandlers handlers = new DiscordEventHandlers();
+        handlers.ready = (user) -> System.out.println("Ready!");
+        lib.Discord_Initialize(applicationId, handlers, true, steamId);
+        DiscordRichPresence discordPresence = new DiscordRichPresence();
+        discordPresence.state = "Playing on Crafted Utopia";
+        discordPresence.details = "In Bedwars";
+        discordPresence.startTimestamp = 1507665886;
+        discordPresence.endTimestamp = 1517695321;
+        discordPresence.largeImageKey = "survival";
+        discordPresence.largeImageText = "Playing in a Bedwars Game";
+        discordPresence.smallImageKey = "springyfr_png";
+        discordPresence.smallImageText = "SpringyFr";
+        discordPresence.partyId = "ae488379-351d-4a4f-ad32-2b9b01c91657";
+        discordPresence.partySize = 1;
+        discordPresence.partyMax = 75;
+        discordPresence.spectateSecret = "MTIzNDV8MTIzNDV8MTMyNDU0";
+        discordPresence.joinSecret = "MTI4NzM0OjFpMmhuZToxMjMxMjM= ";
+        lib.Discord_UpdatePresence(discordPresence);
+        // in a worker thread
+        new Thread(() -> {
+            while (!Thread.currentThread().isInterrupted()) {
+                lib.Discord_RunCallbacks();
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException ignored) {}
+            }
+        }, "RPC-Callback-Handler").start();
+    }
+}

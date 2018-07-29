@@ -1,0 +1,38 @@
+package com.springfox.cuclinet;
+
+import club.minnced.discord.rpc.*;
+
+public class Main {
+    public static void main(String[] args) {
+        DiscordRPC lib = DiscordRPC.INSTANCE;
+        String applicationId = "472959129019744256";
+        String steamId = "";
+        DiscordEventHandlers handlers = new DiscordEventHandlers();
+        handlers.ready = (user) -> System.out.println("Ready!");
+        lib.Discord_Initialize(applicationId, handlers, true, steamId);
+        DiscordRichPresence discordPresence = new DiscordRichPresence();
+        discordPresence.state = cu.playingon;
+        discordPresence.details = cu.gamestamp;
+        discordPresence.startTimestamp = cu.timestampstart;
+        discordPresence.endTimestamp = cu.timestampend;
+        discordPresence.largeImageKey = cu.playingimageping;
+        discordPresence.largeImageText = cu.playingin;
+        discordPresence.smallImageKey = cu.imageping1;
+        discordPresence.smallImageText = cu.imagepingt1;
+        discordPresence.partyId = cu.partyid;
+        discordPresence.partySize = cu.playersparty;
+        discordPresence.partyMax = cu.playersparty;
+        discordPresence.spectateSecret = cu.secret1;
+        discordPresence.joinSecret = cu.secret2;
+        lib.Discord_UpdatePresence(discordPresence);
+        // in a worker thread
+        new Thread(() -> {
+            while (!Thread.currentThread().isInterrupted()) {
+                lib.Discord_RunCallbacks();
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException ignored) {}
+            }
+        }, "RPC-Callback-Handler").start();
+    }
+}
