@@ -41,9 +41,4 @@ public class game {
 	//mods
 	public static String modded = "Mods" + server.time2;
 	
-	//BuildBattle
-	public static String bb = "Build Battle" + server.time1;
-	public static String buildb = "BB" + server.time1;
-	
-	
 }
