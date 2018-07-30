@@ -1,11 +1,13 @@
 package com.springfox.cuclinet;
 
-public class game {
-	
-	
-	
-	
-	
+import java.util.Random;
+
+	public class game {
+
+		
+		
+	}}
+    
 	
 	
 	
@@ -52,5 +54,6 @@ public class game {
 	//BuildBattle
 	public static String bb = "Build Battle" + buildbattle.lobby;
 	public static String buildb = "BB" + buildbattle.lobby;
-
+	
+	
 }

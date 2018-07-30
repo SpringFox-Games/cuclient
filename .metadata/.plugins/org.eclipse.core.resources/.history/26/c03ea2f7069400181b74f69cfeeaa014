@@ -1,11 +1,35 @@
 package com.springfox.cuclinet;
 
-public class game {
-	
-	
-	
-	
-	
+import java.util.Random;
+
+	public class game {
+	public static void main(String[] args) {
+	String[] strArray = { "first", "second", "third" };
+	System.out.println(getRandomWord(strArray));
+	}
+
+	static String getRandomWord(String[] array) {
+	Random random = new Random();
+	int index = random.nextInt(array.length);
+	return array[index];
+
+	}
+
+	static String getRandomWordWithLength(String[] array, int len) {
+	Random random = new Random();
+
+	for (int i = 0; i < 500; i++) {
+	  int index = random.nextInt(3);
+	  String selectedString = array[index];
+	  if (selectedString.length() > len)
+	    return selectedString;
+	}
+	return null;
+
+	}
+
+	}}
+    
 	
 	
 	
@@ -52,5 +76,6 @@ public class game {
 	//BuildBattle
 	public static String bb = "Build Battle" + buildbattle.lobby;
 	public static String buildb = "BB" + buildbattle.lobby;
-
+	
+	
 }

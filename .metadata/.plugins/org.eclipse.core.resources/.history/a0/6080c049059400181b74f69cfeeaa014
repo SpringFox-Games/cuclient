@@ -1,15 +1,7 @@
 package com.springfox.cuclinet;
 
 public class game {
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	
 	//main
 	public static String playerlower = "springyfr";
@@ -40,17 +32,18 @@ public class game {
 	
 	
 	//bedwars
-	public static String bedwarss = "Bedwars" + bedwars.lobby;
-	public static String bw = "BW" + bedwars.lobby;
+	public static String bedwars = "Bedwars";
+	public static String bw = "BW";
 	
 	//hub
-	public static String hub = "Hub" + mods.lobby;
+	public static String hub = "Hub" + server.time1;
 	
 	//mods
-	public static String modded = "Mods" + mods.lobby;
+	public static String modded = "Mods" + server.time2;
 	
 	//BuildBattle
-	public static String bb = "Build Battle" + buildbattle.lobby;
-	public static String buildb = "BB" + buildbattle.lobby;
-
+	public static String bb = "Build Battle" + server.time1;
+	public static String buildb = "BB" + server.time1;
+	
+	
 }
